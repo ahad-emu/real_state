@@ -1,0 +1,30 @@
+#header{
+  background-color: #283e60;
+  height: 50px;
+
+}
+#branding h1{
+  color: #fff;
+}
+#user-tools {
+  color: #fff;
+}
+.module h2, .module caption, .inline-group h2 {
+  background-color: #283e60;
+  color: #fff;
+}
+h1{
+  color: #283e60;
+  font-weight: bold;
+}
+div.breadcrumbs{
+  background-color: #30CAA0;
+  color: #283e60;
+}
+div.breadcrumbs a{
+  color: #283e60;
+}
+.button, input[type=submit], input[type=button], .submit-row input, a.button{
+  background-color: #283e60;
+  color: #fff;
+}

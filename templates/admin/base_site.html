@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+
+{% block branding %}
+<h1 id="header">
+  <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="real-state" height="30" width="50">
+  <div style="margin-left:3px;">
+    BD Real State
+  </div>
+</h1>
+{% endblock %}
+{% block extrastyle %}
+  <link rel="stylesheet" href="{% static 'assets/css/base_site.css' %}">
+{% endblock %}
