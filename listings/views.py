@@ -4,9 +4,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def index(request):
-    items = Listing.objects.all()
+    items = Listing.objects.order_by('-list_date').filter(is_published=True)
     #paginator
-    paginator = Paginator(items, 3)
+    paginator = Paginator(items, 6)
     page = request.GET.get('page')
     paged_item = paginator.get_page(page)
 

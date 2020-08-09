@@ -117,13 +117,14 @@
                   <a class="page-link" href="#">&raquo;</a>
                 </li>
               {% endif %}
-          {% endif %}
+
           </ul>
         </div>
       </div>
-      <div class="current text-center">
+      <div class="current text-center text-danger">
           Page {{ listings.number }} of {{ listings.paginator.num_pages }}.
       </div>
+      {% endif %}
     </div>
   </section>
 

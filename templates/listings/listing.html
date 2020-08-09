@@ -6,9 +6,10 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1 class="display-4">45 Drivewood Circle</h1>
+          {% if item %}
+          <h1 class="display-4">{{item.title}}</h1>
           <p class="lead">
-            <i class="fas fa-map-marker"></i> Norwood MA, 02062</p>
+            <i class="fas fa-map-marker"></i> {{item.city}} {{item.state}}, {{item.zipcode}}</p>
         </div>
       </div>
     </div>
@@ -25,7 +26,6 @@
           <li class="breadcrumb-item">
             <a href="{% url 'listings' %}">Listings</a>
           </li>
-          {% if item %}
           <li class="breadcrumb-item active">{{ item.title }}</li>
         </ol>
       </nav>
@@ -42,36 +42,49 @@
           <img src="{{ item.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
-            <div class="col-md-2">
-              <a href="assets/img/homes/home-inside-1.jpg" data-lightbox="home-images">
-                <img src="assets/img/homes/home-inside-1.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-            <div class="col-md-2">
-              <a href="assets/img/homes/home-inside-2.jpg" data-lightbox="home-images">
-                <img src="assets/img/homes/home-inside-2.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-            <div class="col-md-2">
-              <a href="assets/img/homes/home-inside-3.jpg" data-lightbox="home-images">
-                <img src="assets/img/homes/home-inside-3.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-            <div class="col-md-2">
-              <a href="assets/img/homes/home-inside-4.jpg" data-lightbox="home-images">
-                <img src="assets/img/homes/home-inside-4.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-            <div class="col-md-2">
-              <a href="assets/img/homes/home-inside-5.jpg" data-lightbox="home-images">
-                <img src="assets/img/homes/home-inside-5.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
-            <div class="col-md-2">
-              <a href="assets/img/homes/home-inside-6.jpg" data-lightbox="home-images">
-                <img src="assets/img/homes/home-inside-6.jpg" alt="" class="img-fluid">
-              </a>
-            </div>
+            {% if item.photo_1 %}
+              <div class="col-md-2">
+                <a href="{{item.photo_1.url}}" data-lightbox="home-images">
+                  <img src="{{item.photo_1.url}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endif %}
+            {% if item.photo_2 %}
+              <div class="col-md-2">
+                <a href="{{item.photo_2.url}}" data-lightbox="home-images">
+                  <img src="{{item.photo_2.url}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endif %}
+            {% if item.photo_3 %}
+              <div class="col-md-2">
+                <a href="{{item.photo_3.url}}" data-lightbox="home-images">
+                  <img src="{{item.photo_3.url}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endif %}
+            {% if item.photo_4 %}
+              <div class="col-md-2">
+                <a href="{{item.photo_4.url}}" data-lightbox="home-images">
+                  <img src="{{item.photo_4.url}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endif %}
+            {% if item.photo_5 %}
+              <div class="col-md-2">
+                <a href="{{item.photo_5.url}}" data-lightbox="home-images">
+                  <img src="{{item.photo_5.url}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endif %}
+            {% if item.photo_6 %}
+              <div class="col-md-2">
+                <a href="{{item.photo_6.url}}" data-lightbox="home-images">
+                  <img src="{{item.photo_6.url}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endif %}
+
           </div>
           <!-- Fields -->
           <div class="row mb-5 fields">
@@ -131,7 +144,7 @@
         </div>
         <div class="col-md-3">
           <div class="card mb-3">
-            <img class="card-img-top" src="assets/img/realtors/kyle.jpg" alt="Seller of the month">
+            <img class="card-img-top" src="{{item.realtor.photo.url}}" alt="Seller of the month">
             <div class="card-body">
               <h5 class="card-title">Property Realtor</h5>
               <h6 class="text-secondary">{{ item.realtor }}</h6>
