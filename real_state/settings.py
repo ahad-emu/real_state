@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'real_state_app',
     'listings',
-    'realtors'
+    'realtors',
+    'accounts',
+    'contacts',
 ]
 
 MIDDLEWARE = [
